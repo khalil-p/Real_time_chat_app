@@ -17,7 +17,12 @@ config({ path: "./config/config.env" });
 //     methods: ["GET", "POST", "PUT", "DELETE"],
 //   })
 // );
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 app.use(cookiParser());
 app.use(express.json());

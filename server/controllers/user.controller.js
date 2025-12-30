@@ -88,7 +88,8 @@ export const signout = catchAsyncErrors(async (req, res, next) => {
     .cookie("token", "", {
       maxAge: 0,
       httpOnly: true,
-      sameSite: "strict",
+      // sameSite: "strict",
+      sameSite: "none",
       secure: process.env.NODE_ENV === "production",
     })
     .json({
@@ -114,9 +115,9 @@ export const updateProfile = catchAsyncErrors(async (req, res, next) => {
   }
   const avatar = req?.files?.avatar;
   let cloudinaryResponse = {};
-  console.log({avatar});
-  
-  if (avatar) { 
+  console.log({ avatar });
+
+  if (avatar) {
     try {
       const oldAvatarPublicId = req.user?.avatar?.public_id;
       if (oldAvatarPublicId && oldAvatarPublicId.length > 0) {
