@@ -5,18 +5,19 @@ import cors from "cors";
 import fileUpload from "express-fileupload";
 import { dbConnect } from "./database/db.js";
 import userRouter from "./routes/user.routes.js";
-import messageRouter from "./routes/message.route.js"
+import messageRouter from "./routes/message.route.js";
 const app = express();
 
 config({ path: "./config/config.env" });
 
-app.use(
-  cors({
-    origin: [process.env.FRONTEND_URL],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: [process.env.FRONTEND_URL],
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//   })
+// );
+app.use(cors());
 
 app.use(cookiParser());
 app.use(express.json());
