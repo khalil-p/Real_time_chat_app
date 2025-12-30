@@ -24,7 +24,7 @@ export const logout = createAsyncThunk("user/sign-out", async (_, thunkAPI) => {
   try {
     const res = await axiosInstance.get("/user/sign-out");
     disconnetSocket();
-    return res;
+    return res.data;
   } catch (error) {
     toast.error(error.response?.data?.message || "Failed to log out");
     return thunkAPI.rejectWithValue(error.response?.data?.message);
