@@ -90,7 +90,8 @@ export const signout = catchAsyncErrors(async (req, res, next) => {
       httpOnly: true,
       // sameSite: "strict",
       sameSite: "none",
-      secure: process.env.NODE_ENV === "production",
+      // secure: process.env.NODE_ENV === "production",
+      secure: true,
     })
     .json({
       success: true,

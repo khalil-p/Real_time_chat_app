@@ -19,7 +19,7 @@ config({ path: "./config/config.env" });
 // );
 app.use(
   cors({
-    origin: true,
+    origin: "https://real-time-chat-app-pv8p.vercel.app",
     credentials: true,
   })
 );
