@@ -88,10 +88,9 @@ export const signout = catchAsyncErrors(async (req, res, next) => {
     .cookie("token", "", {
       maxAge: 0,
       httpOnly: true,
-      // sameSite: "strict",
-      sameSite: "none",
-      // secure: process.env.NODE_ENV === "production",
-      secure: true,
+      sameSite: "strict",
+
+      secure: process.env.NODE_ENV === "production",
     })
     .json({
       success: true,

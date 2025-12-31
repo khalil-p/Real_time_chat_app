@@ -1,5 +1,5 @@
-import express from "express";
 import cookiParser from "cookie-parser";
+import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import fileUpload from "express-fileupload";
